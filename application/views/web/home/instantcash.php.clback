@@ -1,0 +1,65 @@
+<div style = 'z-index:30;position:relative; height:7vw;left:0px;top:0px;' class = 'full-width'>
+	<div style = 'position:absolute; height:100%;left:0px;top:0px;background-color:#7e5785;opacity:0.9' class = 'full-width' id = 'title_login'>
+	</div>
+<div  style = 'display:inline;  padding-left:50%;margin-left:-5.8vw;z-index:999'>
+		<a class = 'playbutton' style = 'opacity:1' href="<?php echo base_url() ?>">
+			<img src = "<?php echo base_url(WEB_IMAGES.'Ginko-Logo.png');?>" style = 'height:5vw;top:1vw;position:absolute;'>
+		</a>
+		
+    </div>            
+</div>
+
+<div class="instantcash_container">
+	<div class="instantcash_state_content">
+		<h2>Redeem</h2>
+		<h3>Secure Connection</h3>
+	</div>
+	<div class="instantcash_login_content">
+		<img src="<?php echo base_url(WEB_IMAGES.'card.png');?>"/>
+		<h2>Please enter your Ginko user name and password to confirm if you meet the minimum requirements.</h2>
+		<div class="instantcash_login_form">
+			<input type="email" id="user_name" placeholder="Username" value="" class="instantcash_login_text"/>
+			<input type="password" id="password" placeholder="Password" value="" class="instantcash_login_text"/>
+			<a href="javascript:;" class="instantcash_login_btn">Login</a>
+		</div>
+	</div>
+	<div class="instantcash_invalid_content">
+		<h2>Sorry, you did not achieve the minimum Ginko contact exchanges.</h2>
+		<h3>You need a minimum 10 Ginko contact
+exchanges to qualify for the giveaway.</h3>
+	</div>
+	<div class="instantcash_err_msg"></div>
+</div>
+
+<input type="hidden" id="site_url" value="<?php echo site_url(); ?>"/>
+
+<script>
+	$(document).ready(function(){
+		$('.instantcash_login_btn').click(function(){
+			var site_url = $('#site_url').val();
+			var user_name = $('#user_name').val();
+			var password = $('#password').val();
+			
+			$.post(site_url + 'web/home/instantcash_login',{
+				user_name : user_name,
+				password : password
+			}, function(rs){
+				console.log(rs);
+				$('.instantcash_err_msg').hide();
+				result = JSON.parse(rs);
+				if(result['success'] == false){
+					if(result['err']['errCode'] == '1101'){
+						$('.instantcash_state_content h2').html('Success!');
+					}else if(result['err']['errCode'] == '1102'){
+						$('.instantcash_state_content h2').html('Invalid');
+					}else{
+						$('.instantcash_err_msg').html(result['err']['errMsg']);
+						$('.instantcash_err_msg').show();
+					}
+				}else if(result['success'] == true){
+					console.log('asd');
+				}
+			});	
+		});
+	});
+</script>

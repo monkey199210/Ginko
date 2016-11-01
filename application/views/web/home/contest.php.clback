@@ -1,0 +1,31 @@
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo:100normal,100italic,200normal,200italic,300normal,300italic,400normal,400italic,500normal,500italic,600normal,600italic,700normal,700italic,800normal,800italic,900normal,900italic|Open+Sans:400normal|Roboto:400normal|Ubuntu:400normal|Lato:400normal|Oswald:400normal|PT+Sans:400normal|Droid+Sans:400normal|Open+Sans+Condensed:300normal|Dosis:400normal|Lobster:400normal&amp;subset=all">
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100normal,100italic,300normal,300italic,400normal,400italic,500normal,500italic,700normal,700italic,900normal,900italic|Open+Sans:400normal|Lato:400normal|Oswald:400normal|Raleway:400normal|PT+Sans:400normal|Source+Sans+Pro:400normal|Droid+Sans:400normal|Ubuntu:400normal|Roboto+Condensed:400normal|Montserrat:400normal&amp;subset=all">
+
+
+<div class="header_content">
+	<a href="<?php echo base_url() ?>" class="header_logo"><img src="<?php echo base_url(WEB_IMAGES.'logo.png');?>"/></a>
+</div>
+<div class="banner_content">
+	<a class="banner_top">DOWNLOAD FREE APP TO WIN!</a>
+	<div class="banner_left">
+		<div class="banner_title">
+			<h1>PRIZES <span>FOR</span></h1>
+			<p>CONTEST WINNERS!</p>
+		</div>
+		<ul class="banner_list">
+			<li>
+				<div class="banner_list_img"><img src="<?php echo base_url(WEB_IMAGES.'money_icon.png');?>"/></div>
+				<div class="banner_list_title">
+					
+				</div>
+				<div class="banner_list_txt">
+					1   WINNER - A SEMESTER TUITION*
+1000   Contact  Shares
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="banner_right">
+		<img src="<?php echo base_url(WEB_IMAGES.'phone.png');?>"/>
+	</div>
+</div>
